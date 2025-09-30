@@ -33,6 +33,7 @@
 		C4BD298E2E88660B00E6CBD1 /* Exceptions for "PocketGoods" folder in "PocketGoods" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CoreApp,
 				Info.plist,
 			);
 			target = C4BD29622E8863A100E6CBD1 /* PocketGoods */;
@@ -208,6 +209,9 @@
 			);
 			mainGroup = C4BD295A2E8863A100E6CBD1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C4BD29902E88690100E6CBD1 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C4BD29642E8863A100E6CBD1 /* Products */;
 			projectDirPath = "";
@@ -601,6 +605,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4BD29902E88690100E6CBD1 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = C4BD295B2E8863A100E6CBD1 /* Project object */;
 }
