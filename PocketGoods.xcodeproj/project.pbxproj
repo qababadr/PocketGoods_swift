@@ -34,6 +34,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				CoreApp,
+				CoreUI,
 				Info.plist,
 			);
 			target = C4BD29622E8863A100E6CBD1 /* PocketGoods */;
