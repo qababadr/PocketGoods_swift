@@ -8,7 +8,7 @@
 		<dict>
 			<key>127.0.0.1</key>
 			<string></string>
-			<key>192.168.1.6</key>
+			<key>192.168.1.5</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>

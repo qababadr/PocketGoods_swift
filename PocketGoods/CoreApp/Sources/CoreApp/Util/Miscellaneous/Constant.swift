@@ -6,7 +6,7 @@
 //
 
 public struct Constant {
-    public static let HOST = "http://192.168.1.6:8000"
+    public static let HOST = "http://192.168.1.5:8000"
     public static let API_BASE_URL: String = "\(HOST)/api/"
     public static let DATABASE_NAME = "pocket_goods_database"
     public static let DATABASE_VERSION = "v1"

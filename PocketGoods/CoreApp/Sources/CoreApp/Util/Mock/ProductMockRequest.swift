@@ -101,7 +101,7 @@ extension MockURLProtocol {
         encoder: JSONEncoder
     ) throws -> (URLResponse, Data) {
         if let json = MockURLProtocol.getFormData(from: request),
-            let searchQuery = json["search_input"] as? String
+            let searchQuery = json["search_query"] as? String
         {
             let response = HTTPURLResponse(
                 url: url,

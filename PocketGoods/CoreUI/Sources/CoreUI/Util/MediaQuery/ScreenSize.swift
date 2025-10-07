@@ -14,6 +14,19 @@ public enum ScreenSize {
     case xlarge
 }
 
+extension ScreenSize {
+    public func getGridLayoutColumns() -> CGFloat {
+        return switch self {
+        case .xlarge, .large:
+            3
+        case .medium:
+            2
+        case .small:
+            1
+        }
+    }
+}
+
 extension CGSize {
     public func getScreenSize() -> ScreenSize {
         return switch width {
