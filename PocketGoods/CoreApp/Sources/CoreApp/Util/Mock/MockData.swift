@@ -13,11 +13,40 @@ public struct MockData {
     
     public static let correctEmail = "email@email.email"
     public static let correctPassword = "Password@1"
+    
+    public static func seedDatabase(memoryDatabase: PocketGoodsDatabaseManager) throws {
+
+        try memoryDatabase.insert(MockData.userDTO.toUserEntity())
+        try MockData
+            .userDTO
+            .wishlist
+            .forEach { wishlistItemDTO in
+                if let productDetail = wishlistItemDTO.productDetail {
+                    try memoryDatabase.insert(productDetail.toProductEntity())
+
+                    try productDetail
+                        .media
+                        .forEach { imageDTO in
+                            try memoryDatabase.insert(
+                                imageDTO.toImageEntity(
+                                    productId: productDetail.id
+                                )
+                            )
+                        }
+                }
+
+                try memoryDatabase.insert(
+                    wishlistItemDTO.toWishlistItemEntity(
+                        userId: MockData.userDTO.id
+                    )
+                )
+            }
+    }
 
     public static let userDTO = UserDTO(
         id: 6,
         name: "badr qaba",
-        email: "backupbadr@gmail.com",
+        email: "email@email.email",
         emailVerifiedAt: nil,
         wishlist: [
             WishlistItemDTO(

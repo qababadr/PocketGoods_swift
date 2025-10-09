@@ -33,6 +33,7 @@
 		C4BD298E2E88660B00E6CBD1 /* Exceptions for "PocketGoods" folder in "PocketGoods" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AuthenticationFeature,
 				CoreApp,
 				CoreUI,
 				Info.plist,

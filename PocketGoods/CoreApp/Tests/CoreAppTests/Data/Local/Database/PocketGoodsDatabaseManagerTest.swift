@@ -125,7 +125,7 @@ final class PocketGoodsDatabaseManagerTest: XCTestCase {
         }
         let userDTO = MockData.userDTO
 
-        try seedDatabase()
+        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
 
         let userData: UserWithWishlistAndProductAndImages? =
             try await memoryDatabase.reader.read { db in
@@ -186,7 +186,7 @@ final class PocketGoodsDatabaseManagerTest: XCTestCase {
             return
         }
 
-        try seedDatabase()
+        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
 
         var observedUserState: [User?] = []
 
@@ -219,35 +219,5 @@ final class PocketGoodsDatabaseManagerTest: XCTestCase {
                 MockData.userDTO.toUser()
             )
         }
-    }
-
-    private func seedDatabase() throws {
-        guard let memoryDatabase else { return }
-
-        try memoryDatabase.insert(MockData.userDTO.toUserEntity())
-        try MockData
-            .userDTO
-            .wishlist
-            .forEach { wishlistItemDTO in
-                if let productDetail = wishlistItemDTO.productDetail {
-                    try memoryDatabase.insert(productDetail.toProductEntity())
-
-                    try productDetail
-                        .media
-                        .forEach { imageDTO in
-                            try memoryDatabase.insert(
-                                imageDTO.toImageEntity(
-                                    productId: productDetail.id
-                                )
-                            )
-                        }
-                }
-
-                try memoryDatabase.insert(
-                    wishlistItemDTO.toWishlistItemEntity(
-                        userId: MockData.userDTO.id
-                    )
-                )
-            }
     }
 }
