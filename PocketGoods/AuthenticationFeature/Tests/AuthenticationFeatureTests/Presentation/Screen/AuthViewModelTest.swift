@@ -309,7 +309,7 @@ final class AuthViewModelTest: XCTestCase {
             return
         }
 
-        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
+        try MockData.seedUserData(memoryDatabase: memoryDatabase)
         mockCryptoService.saveTokenToKeychain(token: MockData.token)
 
         let expectation = XCTestExpectation(
@@ -368,7 +368,7 @@ final class AuthViewModelTest: XCTestCase {
             description: "User should not be allowed to log out"
         )
 
-        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
+        try MockData.seedUserData(memoryDatabase: memoryDatabase)
         mockCryptoService.saveTokenToKeychain(token: "some wrong token")
 
         Task {

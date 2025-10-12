@@ -217,7 +217,7 @@ final class AuthenticationRepositoryImplTest: XCTestCase {
             description: "Should get the current authenticated user"
         )
 
-        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
+        try MockData.seedUserData(memoryDatabase: memoryDatabase)
         mockCryptoService.saveTokenToKeychain(token: MockData.token)
 
         await useCases
@@ -339,7 +339,7 @@ final class AuthenticationRepositoryImplTest: XCTestCase {
             return
         }
 
-        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
+        try MockData.seedUserData(memoryDatabase: memoryDatabase)
         mockCryptoService.saveTokenToKeychain(token: MockData.token)
         
         let response = try await useCases
@@ -361,7 +361,7 @@ final class AuthenticationRepositoryImplTest: XCTestCase {
             return
         }
 
-        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
+        try MockData.seedUserData(memoryDatabase: memoryDatabase)
         mockCryptoService.saveTokenToKeychain(token: "Some wrong token")
         
         do {

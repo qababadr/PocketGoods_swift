@@ -38,6 +38,8 @@
 				CoreUI,
 				Info.plist,
 				ProductFeature,
+				SettingsFeature,
+				WishlistFeature,
 			);
 			target = C4BD29622E8863A100E6CBD1 /* PocketGoods */;
 		};
@@ -89,12 +91,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C43F07102E9AFB250005DEDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C4BD295A2E8863A100E6CBD1 = {
 			isa = PBXGroup;
 			children = (
 				C4BD29652E8863A100E6CBD1 /* PocketGoods */,
 				C4BD29732E8863A200E6CBD1 /* PocketGoodsTests */,
 				C4BD297D2E8863A200E6CBD1 /* PocketGoodsUITests */,
+				C43F07102E9AFB250005DEDF /* Frameworks */,
 				C4BD29642E8863A100E6CBD1 /* Products */,
 			);
 			sourceTree = "<group>";

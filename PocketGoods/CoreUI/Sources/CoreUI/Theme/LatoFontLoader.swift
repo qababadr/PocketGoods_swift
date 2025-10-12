@@ -12,9 +12,16 @@ public enum Lato: String, CaseIterable {
     case regular = "lato_regular"
 }
 
-public extension Font {
-    static func lato(_ lato: Lato, size: CGFloat) -> Font {
-        return .custom(lato.rawValue, size: size)
+extension Font {
+    public static func lato(_ lato: Lato, size: CGFloat) -> Font {
+        switch lato {
+        case .bold:
+            return .custom("Lato-Bold", size: size)
+        case .regular:
+            return .custom("Lato-Regular", size: size)
+        case .italic:
+            return .custom("Lato-Italic", size: size)
+        }
     }
 }
 

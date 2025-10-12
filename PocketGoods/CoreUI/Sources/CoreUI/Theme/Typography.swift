@@ -21,6 +21,7 @@ public extension Font {
     
     static let bodyLarge = Font.lato(.regular, size: .fontBodyLarge)
     static let bodyMedium = Font.lato(.regular, size: .fontBodyMedium)
+    static let bodyMediumBold = Font.lato(.bold, size: .fontBodyMedium)
     
     static let labelLarge = Font.lato(.regular, size: .fontLabelLarge)
     static let labelMedium = Font.lato(.regular, size: .fontLabelMedium)

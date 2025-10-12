@@ -10,11 +10,29 @@ import Foundation
 public struct MockData {
     public static let token =
         "28|zzpMGvjoMKDlu3PfJX7rLydMLNMtODuy3dOqjoqRea0ca3fe"
-    
+
     public static let correctEmail = "email@email.email"
     public static let correctPassword = "Password@1"
-    
-    public static func seedDatabase(memoryDatabase: PocketGoodsDatabaseManager) throws {
+
+    public static func seedApplicationSettings(
+        memoryDatabase: PocketGoodsDatabaseManager,
+        latestRoute: String = "",
+        isDarkMode: Bool = false
+    ) throws {
+
+        try memoryDatabase.insert(
+            AppSettings(
+                isDarkMode: isDarkMode,
+                latestRoute: latestRoute
+            )
+            .toAppSettingsEntity(),
+            onConflict: .replace
+        )
+    }
+
+    public static func seedUserData(memoryDatabase: PocketGoodsDatabaseManager)
+        throws
+    {
 
         try memoryDatabase.insert(MockData.userDTO.toUserEntity())
         try MockData

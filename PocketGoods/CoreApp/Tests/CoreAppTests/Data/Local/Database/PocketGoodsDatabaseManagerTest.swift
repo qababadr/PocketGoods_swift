@@ -125,7 +125,7 @@ final class PocketGoodsDatabaseManagerTest: XCTestCase {
         }
         let userDTO = MockData.userDTO
 
-        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
+        try MockData.seedUserData(memoryDatabase: memoryDatabase)
 
         let userData: UserWithWishlistAndProductAndImages? =
             try await memoryDatabase.reader.read { db in
@@ -186,7 +186,7 @@ final class PocketGoodsDatabaseManagerTest: XCTestCase {
             return
         }
 
-        try MockData.seedDatabase(memoryDatabase: memoryDatabase)
+        try MockData.seedUserData(memoryDatabase: memoryDatabase)
 
         var observedUserState: [User?] = []
 

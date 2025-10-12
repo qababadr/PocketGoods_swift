@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @MainActor
-public class ModalController: ObservableObject{
+public class ModalController: ObservableObject {
     
     @Published
     public var isPresented: Bool = false
