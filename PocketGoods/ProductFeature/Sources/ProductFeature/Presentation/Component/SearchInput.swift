@@ -81,7 +81,7 @@ public struct SearchInput: View {
                 accessibilityIdentifier: LocalKeys.searchProductsCd
                     .localized(bundle: .coreUIBundle),
                 trailingIconAI: LocalKeys.searchInputSearchButtonCd,
-                leadingIconName: "magnify",
+                trailingIconName: "magnify",
                 clearable: true,
                 isProcessing: isProcessing,
                 iconsColor: .theme().secondary,

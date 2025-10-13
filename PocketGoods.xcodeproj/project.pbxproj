@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C454EBFE2E9C304C00F62E50 /* AuthenticationFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C454EBFD2E9C304C00F62E50 /* AuthenticationFeature */; };
+		C454EC002E9C304C00F62E50 /* CoreApp in Frameworks */ = {isa = PBXBuildFile; productRef = C454EBFF2E9C304C00F62E50 /* CoreApp */; };
+		C454EC022E9C304C00F62E50 /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = C454EC012E9C304C00F62E50 /* CoreUI */; };
+		C454EC042E9C304C00F62E50 /* ProductFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C454EC032E9C304C00F62E50 /* ProductFeature */; };
+		C454EC062E9C304C00F62E50 /* SettingsFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C454EC052E9C304C00F62E50 /* SettingsFeature */; };
+		C454EC082E9C304C00F62E50 /* WishlistFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C454EC072E9C304C00F62E50 /* WishlistFeature */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C4BD29712E8863A200E6CBD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,6 +39,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C454ED4A2E9C356C00F62E50 /* Exceptions for "PocketGoods" folder in "PocketGoodsUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Main/SplashScreen/SpalshScreen.swift,
+				Main/SplashScreen/SplashScreen.storyboard,
+			);
+			target = C4BD29792E8863A200E6CBD1 /* PocketGoodsUITests */;
+		};
 		C4BD298E2E88660B00E6CBD1 /* Exceptions for "PocketGoods" folder in "PocketGoods" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -50,6 +67,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				C4BD298E2E88660B00E6CBD1 /* Exceptions for "PocketGoods" folder in "PocketGoods" target */,
+				C454ED4A2E9C356C00F62E50 /* Exceptions for "PocketGoods" folder in "PocketGoodsUITests" target */,
 			);
 			path = PocketGoods;
 			sourceTree = "<group>";
@@ -71,6 +89,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C454EC062E9C304C00F62E50 /* SettingsFeature in Frameworks */,
+				C454EBFE2E9C304C00F62E50 /* AuthenticationFeature in Frameworks */,
+				C454EC002E9C304C00F62E50 /* CoreApp in Frameworks */,
+				C454EC022E9C304C00F62E50 /* CoreUI in Frameworks */,
+				C454EC082E9C304C00F62E50 /* WishlistFeature in Frameworks */,
+				C454EC042E9C304C00F62E50 /* ProductFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +163,12 @@
 			);
 			name = PocketGoods;
 			packageProductDependencies = (
+				C454EBFD2E9C304C00F62E50 /* AuthenticationFeature */,
+				C454EBFF2E9C304C00F62E50 /* CoreApp */,
+				C454EC012E9C304C00F62E50 /* CoreUI */,
+				C454EC032E9C304C00F62E50 /* ProductFeature */,
+				C454EC052E9C304C00F62E50 /* SettingsFeature */,
+				C454EC072E9C304C00F62E50 /* WishlistFeature */,
 			);
 			productName = PocketGoods;
 			productReference = C4BD29632E8863A100E6CBD1 /* PocketGoods.app */;
@@ -629,6 +659,33 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C454EBFD2E9C304C00F62E50 /* AuthenticationFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AuthenticationFeature;
+		};
+		C454EBFF2E9C304C00F62E50 /* CoreApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreApp;
+		};
+		C454EC012E9C304C00F62E50 /* CoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreUI;
+		};
+		C454EC032E9C304C00F62E50 /* ProductFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProductFeature;
+		};
+		C454EC052E9C304C00F62E50 /* SettingsFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsFeature;
+		};
+		C454EC072E9C304C00F62E50 /* WishlistFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WishlistFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C4BD295B2E8863A100E6CBD1 /* Project object */;
 }

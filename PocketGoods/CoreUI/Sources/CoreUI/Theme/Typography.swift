@@ -9,6 +9,7 @@ import SwiftUI
 public extension Font {
     static let displayLarge = Font.lato(.regular, size: .fontDisplayLarge)
     static let displayMedium = Font.lato(.regular, size: .fontDisplayMedium)
+    static let displayMediumBold = Font.lato(.bold, size: .fontDisplayMedium)
     static let displaySmall = Font.lato(.regular, size: .fontDisplaySmall)
     
     static let headlineLarge = Font.lato(.regular, size: .fontHeadlineLarge)
