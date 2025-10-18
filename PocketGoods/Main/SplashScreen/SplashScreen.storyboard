@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -9,48 +9,52 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMi-JR-fL6">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WkG-uS-JD9">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="03J-ki-DXH">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Teo-dg-jSH">
                                         <rect key="frame" x="110" y="358" width="173" height="136"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="173" id="iQr-LH-Udu"/>
-                                            <constraint firstAttribute="height" constant="136" id="tLP-IY-3sW"/>
+                                            <constraint firstAttribute="height" constant="136" id="HXj-pm-U9I"/>
+                                            <constraint firstAttribute="width" constant="173" id="szN-WQ-c55"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="03J-ki-DXH" firstAttribute="centerX" secondItem="VMi-JR-fL6" secondAttribute="centerX" id="HIq-ma-ObL"/>
-                                    <constraint firstItem="03J-ki-DXH" firstAttribute="centerY" secondItem="VMi-JR-fL6" secondAttribute="centerY" id="wa8-Vs-VQO"/>
+                                    <constraint firstItem="Teo-dg-jSH" firstAttribute="centerY" secondItem="WkG-uS-JD9" secondAttribute="centerY" id="3Zw-de-7BM"/>
+                                    <constraint firstItem="Teo-dg-jSH" firstAttribute="centerX" secondItem="WkG-uS-JD9" secondAttribute="centerX" id="Ic7-2r-iRk"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" name="SplashScreenBackgroundColor"/>
+                        <color key="tintColor" name="SplashScreenAccentColor"/>
                         <constraints>
-                            <constraint firstItem="VMi-JR-fL6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1rF-Td-g4x"/>
-                            <constraint firstItem="VMi-JR-fL6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Qse-nJ-MSI"/>
-                            <constraint firstAttribute="bottom" secondItem="VMi-JR-fL6" secondAttribute="bottom" id="cbC-wb-LYJ"/>
-                            <constraint firstItem="VMi-JR-fL6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="iOn-iT-e8x"/>
+                            <constraint firstAttribute="bottom" secondItem="WkG-uS-JD9" secondAttribute="bottom" id="2dv-IJ-sR9"/>
+                            <constraint firstItem="WkG-uS-JD9" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="BMo-nC-n2y"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="WkG-uS-JD9" secondAttribute="trailing" id="HOi-Yh-Nz9"/>
+                            <constraint firstItem="WkG-uS-JD9" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Vlf-WO-1TJ"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
     <resources>
-        <image name="full_logo" width="693.33331298828125" height="426.66665649414062"/>
+        <image name="splash_logo" width="520" height="320"/>
+        <namedColor name="SplashScreenAccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SplashScreenBackgroundColor">
             <color red="0.11764705882352941" green="0.11764705882352941" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

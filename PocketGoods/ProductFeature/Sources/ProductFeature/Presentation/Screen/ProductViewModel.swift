@@ -50,8 +50,16 @@ public class ProductViewModel: ObservableObject {
             searchProducts()
         case .clearSearch:
             clearSearch()
+        case .clearSearchResult:
+            clearSearchResult()
         }
 
+    }
+    
+    private func clearSearchResult () {
+        state = state.copy(
+            searchResult: []
+        )
     }
 
     private func onNextPage() {
@@ -193,7 +201,7 @@ public class ProductViewModel: ObservableObject {
 
     private func searchProducts() {
         guard let useCases else { return }
-
+        
         if state.currentPage <= state.lastPage && !searchQuery.isEmpty {
             Task {
                 await useCases
@@ -209,9 +217,9 @@ public class ProductViewModel: ObservableObject {
                             
                         case .success(data: let response):
                             let newList =
-                                state.products + response.data
+                                state.searchResult + response.data
                             state = state.copy(
-                                products: newList.distinctBy { $0.id },
+                                searchResult: newList.distinctBy { $0.id },
                                 lastPage: response.lastPage,
                                 isPageLoading: false
                             )

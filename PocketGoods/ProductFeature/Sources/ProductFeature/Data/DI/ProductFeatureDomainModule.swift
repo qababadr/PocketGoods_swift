@@ -10,6 +10,7 @@ import Swinject
 public struct ProductFeatureDomainModule {
     private init() {}
 
+    @MainActor
     public static func install() {
         AppContainer
             .shared

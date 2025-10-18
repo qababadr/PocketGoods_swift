@@ -5,6 +5,7 @@
 //  Created by BADR  QABA on 2025-09-29.
 //
 
+@MainActor
 @propertyWrapper
 public struct Inject<Service> {
 

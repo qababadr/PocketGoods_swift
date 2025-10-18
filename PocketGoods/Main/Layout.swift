@@ -98,7 +98,7 @@ struct Layout: View {
                         userHasLoggedInEvent,
                     typingText: LocalKeys.headerText.localized(
                         bundle: .coreUIBundle
-                    )
+                    ),
                 )
                 .frame(height: 420)
             },
@@ -116,7 +116,7 @@ struct Layout: View {
             },
             scrollableID: UIConstants.scrollableContainer
         )
-        .mainContentMinHeight(700)
+        .mainContentMinHeight(UIScreen.main.bounds.height * 0.45)
     }
 }
 

@@ -11,6 +11,7 @@ import Swinject
 public struct WishlistFeatureDomainModule {
     private init() {}
     
+    @MainActor
     public static func install() {
         AppContainer
             .shared

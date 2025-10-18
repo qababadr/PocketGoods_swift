@@ -19,6 +19,7 @@ public final class AppDependency {
 
     private init() {}
 
+    @MainActor
     public func installDependencies() {
         if isInTestEnvironment {
             AppTestModule.install()

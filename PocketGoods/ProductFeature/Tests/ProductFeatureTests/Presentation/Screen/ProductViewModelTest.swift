@@ -256,9 +256,9 @@ final class ProductViewModelTest: XCTestCase {
             .sink { state in
                 observedStates.append(state)
 
-                if !state.isPageLoading && !state.products.isEmpty {
+                if !state.isPageLoading && !state.searchResult.isEmpty {
                     XCTAssertEqual(
-                        state.products,
+                        state.searchResult,
                         MockData
                             .searchPaginationResponse(query: query)
                             .data
@@ -291,10 +291,10 @@ final class ProductViewModelTest: XCTestCase {
             let successState = observedStates[1]
 
             XCTAssertTrue(loadingState.isPageLoading)
-            XCTAssertTrue(loadingState.products.isEmpty)
+            XCTAssertTrue(loadingState.searchResult.isEmpty)
 
             XCTAssertFalse(successState.isPageLoading)
-            XCTAssertTrue(!successState.products.isEmpty)
+            XCTAssertTrue(!successState.searchResult.isEmpty)
         }
     }
 
@@ -330,7 +330,7 @@ final class ProductViewModelTest: XCTestCase {
                 observedStates.append(state)
 
                 if !state.isPageLoading {
-                    XCTAssertTrue(state.products.isEmpty)
+                    XCTAssertTrue(state.searchResult.isEmpty)
                     expectation.fulfill()
                 }
 
@@ -359,10 +359,10 @@ final class ProductViewModelTest: XCTestCase {
             let successState = observedStates[1]
 
             XCTAssertTrue(loadingState.isPageLoading)
-            XCTAssertTrue(loadingState.products.isEmpty)
+            XCTAssertTrue(loadingState.searchResult.isEmpty)
 
             XCTAssertFalse(successState.isPageLoading)
-            XCTAssertTrue(successState.products.isEmpty)
+            XCTAssertTrue(successState.searchResult.isEmpty)
         }
     }
 }

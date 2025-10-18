@@ -11,6 +11,7 @@ import Swinject
 public struct ApplicationSettingsFeatureDomainModule {
     private init() {}
 
+    @MainActor
     public static func install() {
         AppContainer
             .shared

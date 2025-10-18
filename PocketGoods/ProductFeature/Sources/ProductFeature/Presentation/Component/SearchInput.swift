@@ -132,9 +132,7 @@ public struct SearchInput: View {
                     .padding(.horizontal, 8)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .accessibilityIdentifier(
-                    LocalKeys.searchInputListTestTagCd
-                )
+                .accessibilityIdentifier(LocalKeys.searchInputListTestTagCd)
                 .zIndex(10)
                 .padding(.top, 6)
                 .frame(
@@ -145,6 +143,7 @@ public struct SearchInput: View {
                 .clipShape(RoundedRectangle(cornerRadius: Theme.small))
                 .padding(.top, 65)
                 .padding(.leading, 20)
+                
             }
         }
     }

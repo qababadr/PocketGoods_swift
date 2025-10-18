@@ -5,15 +5,14 @@
 //  Created by BADR  QABA on 2025-09-29.
 //
 
-@preconcurrency import Swinject
+import Swinject
 
-public final class AppContainer: Sendable {
+@MainActor
+public final class AppContainer {
 
     public static let shared: AppContainer = AppContainer()
 
-    private var container: Container {
-        Container()
-    }
+    private let container: Container = Container()
 
     public func resolve<Service>(_ serviceType: Service.Type) -> Service? {
         container.resolve(serviceType)

@@ -82,7 +82,7 @@ struct AuthModalContent: View {
             }
         }
         .frame(
-            height: formType == .login ? 400 : UIScreen.main.bounds.height * 0.65
+            height: formType == .login ? 420 : UIScreen.main.bounds.height * 0.65
         )
         .background(Color.theme().background)
     }

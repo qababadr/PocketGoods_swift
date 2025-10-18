@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C43FE7862E9D4B4B002E044F /* AuthenticationFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C43FE7852E9D4B4B002E044F /* AuthenticationFeature */; };
+		C43FE7882E9D4B4B002E044F /* CoreApp in Frameworks */ = {isa = PBXBuildFile; productRef = C43FE7872E9D4B4B002E044F /* CoreApp */; };
+		C43FE78A2E9D4B4B002E044F /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = C43FE7892E9D4B4B002E044F /* CoreUI */; };
+		C43FE78C2E9D4B4B002E044F /* ProductFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C43FE78B2E9D4B4B002E044F /* ProductFeature */; };
+		C43FE78E2E9D4B4B002E044F /* SettingsFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C43FE78D2E9D4B4B002E044F /* SettingsFeature */; };
+		C43FE7902E9D4B4B002E044F /* WishlistFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C43FE78F2E9D4B4B002E044F /* WishlistFeature */; };
 		C454EBFE2E9C304C00F62E50 /* AuthenticationFeature in Frameworks */ = {isa = PBXBuildFile; productRef = C454EBFD2E9C304C00F62E50 /* AuthenticationFeature */; };
 		C454EC002E9C304C00F62E50 /* CoreApp in Frameworks */ = {isa = PBXBuildFile; productRef = C454EBFF2E9C304C00F62E50 /* CoreApp */; };
 		C454EC022E9C304C00F62E50 /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = C454EC012E9C304C00F62E50 /* CoreUI */; };
@@ -43,7 +49,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Main/SplashScreen/SpalshScreen.swift,
-				Main/SplashScreen/SplashScreen.storyboard,
 			);
 			target = C4BD29792E8863A200E6CBD1 /* PocketGoodsUITests */;
 		};
@@ -109,6 +114,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43FE78E2E9D4B4B002E044F /* SettingsFeature in Frameworks */,
+				C43FE7862E9D4B4B002E044F /* AuthenticationFeature in Frameworks */,
+				C43FE7882E9D4B4B002E044F /* CoreApp in Frameworks */,
+				C43FE78A2E9D4B4B002E044F /* CoreUI in Frameworks */,
+				C43FE7902E9D4B4B002E044F /* WishlistFeature in Frameworks */,
+				C43FE78C2E9D4B4B002E044F /* ProductFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +226,12 @@
 			);
 			name = PocketGoodsUITests;
 			packageProductDependencies = (
+				C43FE7852E9D4B4B002E044F /* AuthenticationFeature */,
+				C43FE7872E9D4B4B002E044F /* CoreApp */,
+				C43FE7892E9D4B4B002E044F /* CoreUI */,
+				C43FE78B2E9D4B4B002E044F /* ProductFeature */,
+				C43FE78D2E9D4B4B002E044F /* SettingsFeature */,
+				C43FE78F2E9D4B4B002E044F /* WishlistFeature */,
 			);
 			productName = PocketGoodsUITests;
 			productReference = C4BD297A2E8863A200E6CBD1 /* PocketGoodsUITests.xctest */;
@@ -235,6 +252,7 @@
 					};
 					C4BD296F2E8863A200E6CBD1 = {
 						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
 						TestTargetID = C4BD29622E8863A100E6CBD1;
 					};
 					C4BD29792E8863A200E6CBD1 = {
@@ -455,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8GZXS4J2ZW;
@@ -465,7 +484,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8GZXS4J2ZW;
@@ -500,7 +520,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8GZXS4J2ZW;
@@ -537,6 +558,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketGoods.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PocketGoods";
@@ -547,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8GZXS4J2ZW;
@@ -661,6 +684,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C43FE7852E9D4B4B002E044F /* AuthenticationFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AuthenticationFeature;
+		};
+		C43FE7872E9D4B4B002E044F /* CoreApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreApp;
+		};
+		C43FE7892E9D4B4B002E044F /* CoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreUI;
+		};
+		C43FE78B2E9D4B4B002E044F /* ProductFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProductFeature;
+		};
+		C43FE78D2E9D4B4B002E044F /* SettingsFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsFeature;
+		};
+		C43FE78F2E9D4B4B002E044F /* WishlistFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WishlistFeature;
+		};
 		C454EBFD2E9C304C00F62E50 /* AuthenticationFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AuthenticationFeature;

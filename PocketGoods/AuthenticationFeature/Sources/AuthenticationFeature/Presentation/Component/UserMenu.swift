@@ -169,7 +169,6 @@ public struct UserMenu: View {
                 x: anchorPosition == .LEFT ? -110 : 45,
                 y: isMenuExpanded ? 90 : 0
             )
-            .accessibilityIdentifier(LocalKeys.userMenuContainer)
         }
     }
 }

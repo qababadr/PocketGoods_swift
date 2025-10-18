@@ -23,9 +23,6 @@ public struct WishlistManagerScreen: View {
     @EnvironmentObject
     private var modalController: ModalController
 
-    @State
-    private var shouldShowEmptyMessage = false
-
     public init(
         state: Binding<WishlistManagerState>,
         onEvent: @escaping (WishlistManagerScreenEvent) -> Void,
@@ -78,58 +75,24 @@ public struct WishlistManagerScreen: View {
                         .padding(.vertical, 26)
                         .frame(maxWidth: .infinity, alignment: .center)
 
-                        VStack {
-                            if shouldShowEmptyMessage {
-                                WarningMessage(
-                                    text: LocalKeys.emptyWishlist.localized(
-                                        bundle: .coreUIBundle
-                                    ),
-                                    iconName: "information"
-                                )
-                                .padding()
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .background(Color.theme().warning)
-                                .clipShape(
-                                    RoundedRectangle(cornerRadius: Theme.medium)
-                                )
-                                .padding()
-                                .shadow(radius: Theme.medium)
-                                .transition(.scale.combined(with: .opacity))
-                                .animation(
-                                    .interpolatingSpring(
-                                        stiffness: 200,
-                                        damping: 22
-                                    ),
-                                    value: shouldShowEmptyMessage
-                                )
-                            }
-                        }
-                        .frame(maxWidth: .infinity)
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 1
-                            ) {
-                                if state.wishlist.isEmpty {
-                                    withAnimation {
-                                        shouldShowEmptyMessage = true
-                                    }
-                                }
-                            }
-                        }
-                        .onChange(of: state.wishlist) { newWishlist in
-                            if newWishlist.isEmpty {
-                                DispatchQueue.main.asyncAfter(
-                                    deadline: .now() + 1
-                                ) {
-                                    withAnimation {
-                                        shouldShowEmptyMessage = true
-                                    }
-                                }
-                            } else {
-                                withAnimation {
-                                    shouldShowEmptyMessage = false
-                                }
-                            }
+                        AnimatableDelayable(
+                            condition: state.wishlist.isEmpty,
+                            deadline: .now() + 1
+                        ) {
+                            WarningMessage(
+                                text: LocalKeys.emptyWishlist.localized(
+                                    bundle: .coreUIBundle
+                                ),
+                                iconName: "information"
+                            )
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Color.theme().warning)
+                            .clipShape(
+                                RoundedRectangle(cornerRadius: Theme.medium)
+                            )
+                            .padding()
+                            .shadow(radius: Theme.medium)
                         }
 
                         if !state.wishlist.isEmpty {

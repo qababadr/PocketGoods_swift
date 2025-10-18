@@ -42,6 +42,7 @@ public struct ProductDetailScreen: View {
                         alignment: .center
                     )
                     .padding()
+                    .accessibilityIdentifier(UIConstants.loadingIndicator)
 
             } else {
                 switch true {

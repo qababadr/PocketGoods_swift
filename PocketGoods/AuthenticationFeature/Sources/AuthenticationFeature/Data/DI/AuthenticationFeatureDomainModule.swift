@@ -11,6 +11,7 @@ public struct AuthenticationFeatureDomainModule {
 
     private init() {}
 
+    @MainActor
     public static func install() {
         AppContainer
             .shared

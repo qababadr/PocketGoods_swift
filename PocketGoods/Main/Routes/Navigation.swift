@@ -22,16 +22,16 @@ struct Navigation<
 
     @Binding
     var path: [Data]
-    
+
     let root: Data
     let header: Header
     let mainContent: (Data) -> MainContent
     let footer: Footer
     let navigationBarHidden: Bool
     let scrollableID: String
-    
+
     private var mainContentMinHeight: CGFloat
-    
+
     init(
         path: Binding<[Data]>,
         root: Data,
@@ -58,25 +58,29 @@ struct Navigation<
             Spacer()
                 .navigationDestination(for: Data.self) { data in
                     ScrollView {
-                        header
-                        
-                        mainContent(data).frame(minHeight: mainContentMinHeight)
-                        
-                        footer
+                        VStack {
+                            header
+
+                            mainContent(data).frame(
+                                minHeight: mainContentMinHeight
+                            )
+
+                            footer
+                        }
+                    }
+                    .navigationBarHidden(navigationBarHidden)
+                    .accessibilityIdentifier(scrollableID)
+                    .ignoresSafeArea()
+                    .background(Color.theme().background)
+                }
+                .onChange(of: path) { _, newPath in
+                    if newPath.isEmpty {
+                        path = [root]
                     }
                 }
-                .navigationBarHidden(navigationBarHidden)
-                .accessibilityIdentifier(scrollableID)
-                .ignoresSafeArea()
-                .background(Color.theme().background)
-        }
-        .onChange(of: path) {_, newPath in
-            if newPath.isEmpty {
-                path = [root]
-            }
         }
     }
-    
+
     func withMainContentMinHeight(_ height: CGFloat) -> Self {
         var copy = self
         copy.mainContentMinHeight = height

@@ -5,6 +5,8 @@
 //  Created by BADR  QABA on 2025-10-02.
 //
 
+import Foundation
+
 public struct UIConstants {
     public static let currentDestinationKey: String = "current_destination_key"
     public static let parentScrollableContainerKey: String = "parent_scrollable_container"
@@ -17,4 +19,5 @@ public struct UIConstants {
     public static let toggleWishlistButton = "toogle_wishlist_button"
     public static let parentContainerInDarkTheme = "parent_container_in_dark_theme"
     public static let parentContainerInLightTheme = "parent_container_in_light_theme"
+    public static let endToEndTimeout = TimeInterval(15)
 }

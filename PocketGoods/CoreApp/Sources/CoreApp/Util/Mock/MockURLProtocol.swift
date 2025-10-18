@@ -8,7 +8,8 @@ import Foundation
 
 public enum WishlistMockState {
     nonisolated(unsafe) public static var currentWishlist: [WishlistItemDTO] =
-        MockData.userDTO
+        MockData
+        .userDTO
         .wishlist
 }
 

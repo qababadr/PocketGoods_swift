@@ -10,6 +10,7 @@ public struct CoreAppDataModule {
 
     private init() {}
 
+    @MainActor
     public static func install() {
         AppContainer
             .shared

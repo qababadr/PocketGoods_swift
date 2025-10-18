@@ -45,7 +45,6 @@ public class WishlistManagerViewModel: ObservableObject {
 
     private func getWishlistItems(userId: Int64) {
         guard let useCases else { return }
-
         Task {
             await useCases
                 .getEntireWishlist()
@@ -99,7 +98,6 @@ public class WishlistManagerViewModel: ObservableObject {
                 )
 
                 state = state.copy(isDeleting: false)
-
                 onSuccess()
 
             } catch {

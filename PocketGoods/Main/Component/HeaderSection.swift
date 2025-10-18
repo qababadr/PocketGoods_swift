@@ -106,6 +106,7 @@ struct HeaderSection: View {
                             bundle: .coreUIBundle
                         ),
                         search: {
+                            onProductEvent(.clearSearchResult)
                             router.navigate(
                                 to: .ProductSearchResultScreen,
                                 onNavigate: { destination in
@@ -172,6 +173,14 @@ struct HeaderSection: View {
                                                     ),
                                                 severity: .success
                                             )
+
+                                            if let currentDestination =
+                                                router.currentDestination(),
+                                                currentDestination
+                                                    .isPrivateDestination
+                                            {
+                                                router.navigate(to: .HomeScreen)
+                                            }
                                         },
                                         onError: {
                                             snackbarController.show(

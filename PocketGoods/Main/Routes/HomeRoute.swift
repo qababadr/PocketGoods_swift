@@ -70,7 +70,8 @@ struct HomeRoute: View {
                                             LocalKeys
                                             .addedToWishlist
                                             .localized(
-                                                bundle: .coreUIBundle
+                                                bundle: .coreUIBundle,
+                                                ""
                                             ),
                                         severity:
                                             .success
@@ -83,7 +84,8 @@ struct HomeRoute: View {
                                             LocalKeys
                                             .removedFromWishlist
                                             .localized(
-                                                bundle: .coreUIBundle
+                                                bundle: .coreUIBundle,
+                                                ""
                                             ),
                                         severity:
                                             .success

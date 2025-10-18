@@ -15,6 +15,7 @@ import WishlistFeature
 public struct AppTestModule {
     private init() {}
 
+    @MainActor
     public static func install() {
         AppContainer
             .shared

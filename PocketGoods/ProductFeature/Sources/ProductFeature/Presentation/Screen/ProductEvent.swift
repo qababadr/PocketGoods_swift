@@ -12,4 +12,5 @@ public enum ProductEvent {
     case searchSuggestions
     case searchProducts
     case clearSearch
+    case clearSearchResult
 }

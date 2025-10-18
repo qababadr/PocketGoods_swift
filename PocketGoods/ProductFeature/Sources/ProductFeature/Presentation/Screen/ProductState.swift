@@ -8,6 +8,7 @@ import CoreApp
 
 public struct ProductState {
     public let products: [ProductPreview]
+    public let searchResult: [ProductPreview]
     public let lastPage: Int
     public let isPageLoading: Bool
     public let currentPage: Int
@@ -18,6 +19,7 @@ public struct ProductState {
 
     public init(
         products: [ProductPreview] = [],
+        searchResult: [ProductPreview] = [],
         lastPage: Int = 1,
         isPageLoading: Bool = true,
         currentPage: Int = 1,
@@ -27,6 +29,7 @@ public struct ProductState {
         suggestedProducts: [ProductPreview] = []
     ) {
         self.products = products
+        self.searchResult = searchResult
         self.lastPage = lastPage
         self.isPageLoading = isPageLoading
         self.currentPage = currentPage
@@ -38,6 +41,7 @@ public struct ProductState {
 
     public func copy(
         products: [ProductPreview]? = nil,
+        searchResult: [ProductPreview]? = nil,
         lastPage: Int? = nil,
         isPageLoading: Bool? = nil,
         currentPage: Int? = nil,
@@ -48,6 +52,7 @@ public struct ProductState {
     ) -> ProductState {
         return ProductState(
             products: products ?? self.products,
+            searchResult: searchResult ?? self.searchResult,
             lastPage: lastPage ?? self.lastPage,
             isPageLoading: isPageLoading ?? self.isPageLoading,
             currentPage: currentPage ?? self.currentPage,

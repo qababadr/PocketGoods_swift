@@ -2,7 +2,7 @@
 //  ProductSearchResultScreen.swift
 //  ProductFeature
 //
-//  Created by BADR  QABA on 2025-10-07.
+//  Created by BADR QABA on 2025-10-07.
 //
 
 import CoreApp
@@ -33,7 +33,7 @@ public struct ProductSearchResultScreen: View {
 
     public var body: some View {
         ZStack {
-            if state.isPageLoading && state.products.isEmpty {
+            if state.isPageLoading && state.searchResult.isEmpty {
                 ProgressView()
                     .tint(.theme().primary)
                     .accessibilityIdentifier(UIConstants.loadingIndicator)
@@ -42,9 +42,9 @@ public struct ProductSearchResultScreen: View {
                 switch true {
                 case state.error != nil:
                     WarningMessage(
-                        text: LocalKeys
-                            .errorFetchingData
-                            .localized(bundle: .coreUIBundle),
+                        text: LocalKeys.errorFetchingData.localized(
+                            bundle: .coreUIBundle
+                        ),
                         iconName: "information"
                     )
                     .padding()
@@ -58,68 +58,77 @@ public struct ProductSearchResultScreen: View {
                         maxHeight: .infinity,
                         alignment: .center
                     )
-
-                case state.products.isEmpty:
-                    WarningMessage(
-                        text: LocalKeys
-                            .emptyProductList
-                            .localized(bundle: .coreUIBundle),
-                        iconName: "information"
-                    )
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color.theme().warning)
-                    .clipShape(RoundedRectangle(cornerRadius: Theme.medium))
-                    .padding()
-                    .shadow(radius: Theme.medium)
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity,
-                        alignment: .center
-                    )
-
+                    
                 default:
-                    LazyVGrid(
-                        columns: [
-                            GridItem(
-                                .adaptive(
-                                    minimum: UIScreen.main.bounds.width
-                                        / UIScreen.main.bounds.size
-                                        .getScreenSize()
-                                        .getGridLayoutColumns(),
-                                )
-                            )
-                        ],
+                    
+                    AnimatableDelayable(
+                        condition: state.searchResult.isEmpty,
+                        deadline: .now() + 1
                     ) {
-                        ForEach(state.products, id: \.id) { product in
-                            ProductCard(
-                                product: product,
-                                isAuthenticated: authenticatedUser != nil,
-                                inWishlist: authenticatedUser?.inWishlist(
-                                    productId: product.id
-                                ) ?? false,
-                                onViewProduct: onViewProduct,
-                                onToggleWishlist: onToggleWishlist
-                            )
-                            .padding(.all, 10)
-                            .onAppear {
-                                if product.id == state.products.last?.id
-                                    && !state.isPageLoading
-                                {
-                                    onEvent(.onNextPage)
-                                    onEvent(.searchProducts)
+                        WarningMessage(
+                            text: LocalKeys
+                                .emptyProductList
+                                .localized(bundle: .coreUIBundle),
+                            iconName: "information"
+                        )
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(Color.theme().warning)
+                        .clipShape(RoundedRectangle(cornerRadius: Theme.medium))
+                        .padding()
+                        .shadow(radius: Theme.medium)
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity,
+                            alignment: .center
+                        )
+                    }
+                    
+                    if !state.searchResult.isEmpty {
+                        
+                        LazyVGrid(
+                            columns: [
+                                GridItem(
+                                    .adaptive(
+                                        minimum: UIScreen.main.bounds.width
+                                        / UIScreen.main.bounds.size
+                                            .getScreenSize()
+                                            .getGridLayoutColumns()
+                                    )
+                                )
+                            ]
+                        ) {
+                            ForEach(state.searchResult, id: \.id) { product in
+                                ProductCard(
+                                    product: product,
+                                    isAuthenticated: authenticatedUser != nil,
+                                    inWishlist: authenticatedUser?.inWishlist(
+                                        productId: product.id
+                                    ) ?? false,
+                                    onViewProduct: onViewProduct,
+                                    onToggleWishlist: onToggleWishlist
+                                )
+                                .padding(10)
+                                .onAppear {
+                                    if product.id == state.searchResult.last?.id
+                                        && !state.isPageLoading
+                                    {
+                                        onEvent(.onNextPage)
+                                        onEvent(.searchProducts)
+                                    }
                                 }
                             }
-                        }
-                        if state.isPageLoading {
-                            ProgressView()
-                                .tint(.theme().primary)
-                                .frame(
-                                    maxWidth: .infinity,
-                                    maxHeight: .infinity,
-                                    alignment: .center
-                                )
-                                .padding()
+                            
+                            if state.isPageLoading {
+                                ProgressView()
+                                    .tint(.theme().primary)
+                                    .frame(
+                                        maxWidth: .infinity,
+                                        maxHeight: .infinity,
+                                        alignment: .center
+                                    )
+                                    .padding()
+                            }
                         }
                     }
                 }
@@ -135,8 +144,7 @@ public struct ProductSearchResultScreen: View {
 
 private struct ProductSearchResultScreenPreview: View {
 
-    @State
-    private var state: ProductState = ProductState()
+    @State private var state: ProductState = ProductState()
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -144,27 +152,25 @@ private struct ProductSearchResultScreenPreview: View {
                 state: state,
                 onEvent: { event in
                     switch event {
-
                     case .searchProducts:
                         Task {
                             state = state.copy(isPageLoading: true)
-
                             try await Task.sleep(
                                 nanoseconds: UIConstants.loadingInterval
                             )
-
                             state = state.copy(
-                                products:
-                                    MockData
-                                    .searchPaginationResponse(query: "s")
-                                    .data
-                                    .map({ $0.toProductPreview() }),
+                                searchResult: MockData.searchPaginationResponse(
+                                    query: "s"
+                                )
+                                .data
+                                .map { $0.toProductPreview() },
                                 isPageLoading: false
                             )
                         }
+
                     case .onNextPage:
                         state = state.copy(currentPage: 2)
-                        break
+
                     default:
                         break
                     }
