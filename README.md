@@ -2,7 +2,7 @@
 # PocketGoods (IOS - Swift/SwiftUI)
 
 PocketGoods is an IOS application built with **Swift** and **SwiftUI**, designed as the native IOS version of PocketGoods.  
-The project follows a modular architecture with **CoreApp**, **CoreUI**, **ProductFeature**, **AuthenticationFeature**, **WishlistFeature** modules and **SettingsFeature** modules, focusing on scalability, maintainability, and modern IOS best practices.
+The project follows a modular architecture with **CoreApp**, **CoreUI**, **ProductFeature**, **AuthenticationFeature**, **WishlistFeature** and **SettingsFeature** modules, focusing on scalability, maintainability, and modern IOS best practices.
 
 ---
 
